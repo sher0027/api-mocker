@@ -1,0 +1,70 @@
+{
+  "imposters": [
+    {
+      "port": 4545,
+      "protocol": "http",
+      "stubs": [
+        {
+          "predicates": [
+            {
+              "equals": {
+                "method": "GET",
+                "path": "/api/test"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "body": "{\"message\": \"Success\"}"
+              }
+            }
+          ]
+        },
+        {
+          "predicates": [
+            {
+              "equals": {
+                "method": "POST",
+                "path": "/soap/test",
+                "headers": {
+                  "Content-Type": "text/xml"
+                }
+              }
+            }
+          ],
+          "responses": [
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Content-Type": "text/xml"
+                },
+                "body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Body><TestResponse>Success</TestResponse></soapenv:Body></soapenv:Envelope>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "port": 4546,
+      "protocol": "tcp",
+      "stubs": [
+        {
+          "responses": [
+            {
+              "is": {
+                "data": "TCP response"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
