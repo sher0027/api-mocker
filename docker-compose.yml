@@ -11,4 +11,5 @@ services:
       - "4545:4545"
       - "4546:4546"
     volumes:
+      - ./inject:/inject
       - ./imposters.json:/imposters.json
