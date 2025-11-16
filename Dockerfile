@@ -11,7 +11,7 @@ COPY imposters.json /imposters.json
 COPY inject /inject
 
 # Copy the shell script that controls Mountebank startup
-COPY load-imposters.sh /usr/local/bin/load-imposters.sh
+COPY script/load-imposters.sh /usr/local/bin/load-imposters.sh
 
 # Ensure the entrypoint script has execution permissions
 RUN chmod +x /usr/local/bin/load-imposters.sh
