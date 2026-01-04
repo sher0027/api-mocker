@@ -7,4 +7,8 @@ Steps to run:
 3. Modify imposter.json and test-mountebank as you need and run step 1 and 2 again.
 
 Notes:
-The master branch provides both ways to define static and dynamic response, i.e. through `is` and `inject`. You may refer to respective branches to view each way.
+The master branch uses dynamic responses via `inject`, with response bodies loaded from external files.
+Other branches demonstrate the two approaches separately:
+- static responses defined with `is`
+- dynamic responses implemented with `inject`
+

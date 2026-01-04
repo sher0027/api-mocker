@@ -1,8 +1,11 @@
-module.exports = function(request, state, logger) {
-    logger.debug('Received request:', request);
+const path = require('path');
+
+module.exports = function (request, state, logger) {
+    logger.debug('Received request');
+
     return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: 'Success' })
+        body: require(path.join(__dirname, '../payload/rest/rest-response.json'))
     };
 };

@@ -1,17 +1,12 @@
-module.exports = function(request, state, logger) {
-    logger.debug('Received request:', request);
-    const soapResponse = `
-    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-        <soapenv:Body>
-            <TestResponse>Success</TestResponse>
-        </soapenv:Body>
-    </soapenv:Envelope>`;
+const path = require('path');
+const fs = require('fs');
+
+module.exports = function (request, state, logger) {
+    logger.debug('Received request');
 
     return {
         statusCode: 200,
-        headers: {
-            "Content-Type": "text/xml"
-        },
-        body: soapResponse
+        headers: { 'Content-Type': 'text/xml' },
+        body: fs.readFileSync(path.join(__dirname, '../payload/soap/soap-response.xml'), 'utf8')
     };
 };

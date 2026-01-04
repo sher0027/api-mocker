@@ -10,6 +10,9 @@ COPY imposters.json /imposters.json
 # Copy the inject folder (JavaScript files) into the container
 COPY inject /inject
 
+# Copy the payload folder (response files) into the container
+COPY payload /payload
+
 # Copy the shell script that controls Mountebank startup
 COPY script/load-imposters.sh /usr/local/bin/load-imposters.sh
 
