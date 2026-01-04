@@ -9,13 +9,21 @@
             {
               "equals": {
                 "method": "GET",
-                "path": "/api/test"
+                "path": "/rest/test"
               }
             }
           ],
           "responses": [
             {
-              "inject": "require('/inject/restInject.js')"
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Content-Type": "application/json"
+                },
+                "body": {
+                  "message": "Sucess"
+                }
+              }
             }
           ]
         },
@@ -33,7 +41,13 @@
           ],
           "responses": [
             {
-              "inject": "require('/inject/soapInject.js')"
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Content-Type": "text/xml"
+                },
+                "body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Body><TestResponse>Success</TestResponse></soapenv:Body></soapenv:Envelope>"
+              }
             }
           ]
         }
@@ -46,7 +60,9 @@
         {
           "responses": [
             {
-              "inject": "require('/inject/tcpInject.js')"
+              "is": {
+                "data": "TCP response"
+              }
             }
           ]
         }

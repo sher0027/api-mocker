@@ -2,7 +2,7 @@
 
 # Test REST (HTTP GET) on port 4545
 echo "Testing REST response on port 4545..."
-rest_response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "http://localhost:4545/api/test")
+rest_response=$(curl -s -o /dev/null -w "%{http_code}" -X GET "http://localhost:4545/rest/test")
 if [ "$rest_response" -eq 200 ]; then
   echo "REST Test Passed: Received 200 OK"
 else

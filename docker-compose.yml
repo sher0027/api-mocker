@@ -9,5 +9,5 @@ services:
       - "4545:4545"
       - "4546:4546"
     volumes:
-      - ./inject:/inject
+      # - ./inject:/inject # Remove if define static response
       - ./imposters.json:/imposters.json
