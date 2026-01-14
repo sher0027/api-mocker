@@ -6,6 +6,6 @@ module.exports = function (request, state, logger) {
     return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
-        body: require(path.join(__dirname, '../payload/rest/rest-response.json'))
+        body: require(path.join(__dirname, '../../payload/rest/rest-response.json'))
     };
 };

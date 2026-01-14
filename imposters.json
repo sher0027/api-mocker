@@ -15,7 +15,7 @@
           ],
           "responses": [
             {
-              "inject": "require('/inject/restInject.js')"
+              "inject": "require('/inject/rest/restInject.js')"
             }
           ]
         },
@@ -33,7 +33,7 @@
           ],
           "responses": [
             {
-              "inject": "require('/inject/soapInject.js')"
+              "inject": "require('/inject/soap/soapInject.js')"
             }
           ]
         }
@@ -46,7 +46,7 @@
         {
           "responses": [
             {
-              "inject": "require('/inject/tcpInject.js')"
+              "inject": "require('/inject/tcp/tcpInject.js')"
             }
           ]
         }

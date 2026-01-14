@@ -7,6 +7,6 @@ module.exports = function (request, state, logger) {
     return {
         statusCode: 200,
         headers: { 'Content-Type': 'text/xml' },
-        body: fs.readFileSync(path.join(__dirname, '../payload/soap/soap-response.xml'), 'utf8')
+        body: fs.readFileSync(path.join(__dirname, '../../payload/soap/soap-response.xml'), 'utf8')
     };
 };
